@@ -1,308 +1,49 @@
 import React, { Component } from 'react'
-import { Text, TextInput, TouchableOpacity, View, KeyboardAvoidingView, Image, KeyboardAvoidingViewBase, ScrollView, BoxShadow } from 'react-native'
+import { Text, TextInput, TouchableOpacity, View, StyleSheet, Image } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import screenDimension from '../helpers/screenDimension';
-import BannerHompage from '../assets/image/BannerHomePage.png'
-import listIcon from '../assets/image/listIcon.png'
-import listIcon2 from '../assets/image/listIcon2.png'
 import Icon2 from 'react-native-vector-icons/Ionicons';
 import Imagepost from '../assets/image/postFirstAid.png'
-import fa1 from '../assets/image/fa1.png'
-import fa2 from '../assets/image/fa2.png'
-import fa3 from '../assets/image/fa3.png'
+
+import Post from '../components/Post';
+import Header from '../components/Header';
+
 export default class HomePage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            posts: [
+                { id: 1, title: 'Sơ cứu rắn cắn', color: '#17c0eb', save: false, image: 'listIcon' },
+                { id: 2, title: 'Sơ cứu sứa cắn', color: '#3ae374', save: false, image: 'listIcon' },
+                { id: 3, title: 'Sơ cứu ong đốt', color: '#3ae374', save: false, image: 'listIcon' },
+                { id: 4, title: 'Sơ cứu chó cắn', color: '#ffb8b8', save: false, image: 'listIcon' },
+                { id: 5, title: 'Sơ cứu rắn cắn', color: '#17c0eb', save: false, image: 'listIcon' },
+                { id: 6, title: 'Sơ cứu sứa cắn', color: '#3ae374', save: false, image: 'listIcon' },
+                { id: 7, title: 'Sơ cứu ong đốt', color: '#3ae374', save: false, image: 'listIcon' },
+                { id: 8, title: 'Sơ cứu chó cắn', color: '#ffb8b8', save: false, image: 'listIcon' },
+
+            ],
+        };
+    };
     render() {
         return (
-
             <View style={{
                 flex: 1,
                 flexDirection: 'column'
             }}>
-                <View style={{
-                    flex: 0.0713,
-                    flexDirection: 'row'
-                }}>
-
-                    <View style={{
-                        flexDirection: 'row',
-                        flex: 0.097323,
-                        justifyContent: 'flex-end',
-                        alignItems: 'center'
-
-                    }}>
-                        <TouchableOpacity style={{
-                        }}>
-                            <Icon name="bars" size={35} color="#a9a9a9" />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{
-                        flexDirection: 'row',
-                        flex: 0.902677,
-                        alignItems: 'center'
-                        , borderWidth: 0.3,
-                        borderRadius: 30,
-                        marginVertical: screenDimension.getWidth() / 58.714,
-                        borderColor: '#000',
-                        marginHorizontal: screenDimension.getWidth() / 52.2,
-                        justifyContent: 'center',
-                        backgroundColor: 'white',
-                        elevation: 7
-
-
-                    }}>
-                        <TextInput placeholder="Tìm kiếm" style={{
-                            fontSize: 20,
-                            width: screenDimension.getWidth() / 1.4159,
-                            paddingVertical: 0
-                        }} />
-                        <TouchableOpacity>
-                            <Icon name="search" size={25} color="#a9a9a9" style={{
-                                paddingVertical: 0
-                            }} />
-                        </TouchableOpacity>
-                    </View>
-
+                <Header />
+                <View style={styles.groupTitle}>
+                    <Text style={styles.textTitle}>Danh mục bài viết</Text>
                 </View>
-                <View style={{
-                    flex: 0.0613,
-                    flexDirection: 'column',
-                    justifyContent: 'center'
-                }}>
-                    <Text style={{
-                        fontSize: 25,
-                        fontWeight: 'bold'
-                        , fontFamily: 'Roboto',
-                        marginLeft: screenDimension.getWidth() / 31.615
-                    }}>Danh mục bài viết</Text>
+                <View style={styles.groupItem}>
+                    <Post posts={this.state.posts} />
                 </View>
-                <View style={{
-                    flex: 0.795,
-                    flexDirection: 'column',
-
-
-
-                }}>
-
-                    <ScrollView>
-
-                        <TouchableOpacity style={{
-                            flexDirection: 'row',
-                            marginHorizontal: screenDimension.getWidth() / 25.55
-                            , height: screenDimension.getHeight() / 6.75
-                            , borderWidth: 0.3,
-                            borderRadius: 30,
-                            borderColor: '#999',
-                            marginBottom: screenDimension.getHeight() / 68,
-                            marginTop: screenDimension.getHeight() / 68,
-                            backgroundColor: '#17c0eb',
-                            elevation: 7
-
-
-                        }} >
-                            <View style={{
-                                flex: 0.2307,
-                                alignItems: 'flex-end',
-                                justifyContent: 'center'
-                            }}>
-                                <Image source={Imagepost} />
-                            </View>
-                            <View style={{
-                                flex: 0.7693,
-                                justifyContent: 'center',
-                                marginLeft: screenDimension.getWidth() / 19.5714
-                            }}>
-                                <Text style={{
-                                    fontSize: 20,
-                                    fontWeight: 'bold',
-                                    color: 'white'
-                                }}>Sơ cứu khi đập đầu</Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{
-                            flexDirection: 'row',
-                            marginHorizontal: screenDimension.getWidth() / 25.55
-                            , height: screenDimension.getHeight() / 6.75
-                            , borderWidth: 0.3,
-                            borderRadius: 30,
-                            borderColor: '#999',
-                            marginBottom: screenDimension.getHeight() / 68,
-                            marginTop: screenDimension.getHeight() / 68,
-                            backgroundColor: '#3ae374',
-                            elevation: 7
-
-
-                        }} >
-                            <View style={{
-                                flex: 0.2307,
-                                alignItems: 'flex-end',
-                                justifyContent: 'center'
-                            }}>
-                                <Image source={Imagepost} />
-                            </View>
-                            <View style={{
-                                flex: 0.7693,
-                                justifyContent: 'center',
-                                marginLeft: screenDimension.getWidth() / 19.5714
-                            }}>
-                                <Text style={{
-                                    fontSize: 20,
-                                    fontWeight: 'bold',
-                                    color: 'white'
-                                }}>Sơ cứu khi đập đầu</Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{
-                            flexDirection: 'row',
-                            marginHorizontal: screenDimension.getWidth() / 25.55
-                            , height: screenDimension.getHeight() / 6.75
-                            , borderWidth: 0.3,
-                            borderRadius: 30,
-                            borderColor: '#999',
-                            marginBottom: screenDimension.getHeight() / 68,
-                            marginTop: screenDimension.getHeight() / 68,
-                            backgroundColor: '#cd84f1',
-                            elevation: 7
-
-
-                        }} >
-                            <View style={{
-                                flex: 0.2307,
-                                alignItems: 'flex-end',
-                                justifyContent: 'center'
-                            }}>
-                                <Image source={Imagepost} />
-                            </View>
-                            <View style={{
-                                flex: 0.7693,
-                                justifyContent: 'center',
-                                marginLeft: screenDimension.getWidth() / 19.5714
-                            }}>
-                                <Text style={{
-                                    fontSize: 20,
-                                    fontWeight: 'bold',
-                                    color: 'white'
-                                }}>Sơ cứu khi đập đầu</Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{
-                            flexDirection: 'row',
-                            marginHorizontal: screenDimension.getWidth() / 25.55
-                            , height: screenDimension.getHeight() / 6.75
-                            , borderWidth: 0.3,
-                            borderRadius: 30,
-                            borderColor: '#999',
-                            marginBottom: screenDimension.getHeight() / 68,
-                            marginTop: screenDimension.getHeight() / 68,
-                            backgroundColor: '#ffb8b8',
-                            elevation: 7
-
-
-                        }} >
-                            <View style={{
-                                flex: 0.2307,
-                                alignItems: 'flex-end',
-                                justifyContent: 'center'
-                            }}>
-                                <Image source={Imagepost} />
-                            </View>
-                            <View style={{
-                                flex: 0.7693,
-                                justifyContent: 'center',
-                                marginLeft: screenDimension.getWidth() / 19.5714
-                            }}>
-                                <Text style={{
-                                    fontSize: 20,
-                                    fontWeight: 'bold',
-                                    color: 'white'
-                                }}>Sơ cứu khi đập đầu</Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{
-                            flexDirection: 'row',
-                            marginHorizontal: screenDimension.getWidth() / 25.55
-                            , height: screenDimension.getHeight() / 6.75
-                            , borderWidth: 0.3,
-                            borderRadius: 30,
-                            borderColor: '#999',
-                            marginBottom: screenDimension.getHeight() / 68,
-                            marginTop: screenDimension.getHeight() / 68,
-                            backgroundColor: '#17c0eb',
-                            elevation: 7
-
-
-                        }} >
-                            <View style={{
-                                flex: 0.2307,
-                                alignItems: 'flex-end',
-                                justifyContent: 'center'
-                            }}>
-                                <Image source={Imagepost} />
-                            </View>
-                            <View style={{
-                                flex: 0.7693,
-                                justifyContent: 'center',
-                                marginLeft: screenDimension.getWidth() / 19.5714
-                            }}>
-                                <Text style={{
-                                    fontSize: 20,
-                                    fontWeight: 'bold',
-                                    color: 'white'
-                                }}>Sơ cứu khi đập đầu</Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{
-                            flexDirection: 'row',
-                            marginHorizontal: screenDimension.getWidth() / 25.55
-                            , height: screenDimension.getHeight() / 6.75
-                            , borderWidth: 0.3,
-                            borderRadius: 30,
-                            borderColor: '#999',
-                            marginBottom: screenDimension.getHeight() / 68,
-                            marginTop: screenDimension.getHeight() / 68,
-                            backgroundColor: '#17c0eb',
-                            elevation: 7
-
-
-                        }} >
-                            <View style={{
-                                flex: 0.2307,
-                                alignItems: 'flex-end',
-                                justifyContent: 'center'
-                            }}>
-                                <Image source={Imagepost} />
-                            </View>
-                            <View style={{
-                                flex: 0.7693,
-                                justifyContent: 'center',
-                                marginLeft: screenDimension.getWidth() / 19.5714
-                            }}>
-                                <Text style={{
-                                    fontSize: 20,
-                                    fontWeight: 'bold',
-                                    color: 'white'
-                                }}>Sơ cứu khi đập đầu</Text>
-                            </View>
-                        </TouchableOpacity>
-
-                    </ScrollView>
-
-
-                </View>
-
-                <View style={{
-                    flex: 0.0724,
-                    flexDirection: 'row',
-                    borderWidth: 0.5
-                }}>
+                <View style={styles.groupTool}>
                     <View style={{
                         flex: 1,
                     }}>
                         <TouchableOpacity
-                            style={{
-                                flexDirection: "column",
-                                justifyContent: 'center',
-                                alignItems: 'center'
-                            }}>
+                            style={styles.buttonTool}>
                             <Icon name="home" size={35} color="black" />
                             <Text>Trang chủ</Text>
                         </TouchableOpacity>
@@ -310,12 +51,7 @@ export default class HomePage extends Component {
                     <View style={{
                         flex: 1,
                     }}>
-                        <TouchableOpacity
-                            style={{
-                                flexDirection: "column",
-                                justifyContent: 'center',
-                                alignItems: 'center'
-                            }}>
+                        <TouchableOpacity style={styles.buttonTool}>
                             <Icon name="comments" size={35} color="black" />
                             <Text>Đóng góp</Text>
                         </TouchableOpacity>
@@ -323,12 +59,7 @@ export default class HomePage extends Component {
                     <View style={{
                         flex: 1,
                     }}>
-                        <TouchableOpacity
-                            style={{
-                                flexDirection: "column",
-                                justifyContent: 'center',
-                                alignItems: 'center'
-                            }}>
+                        <TouchableOpacity style={styles.buttonTool}>
                             <Icon2 name="newspaper-sharp" size={35} color="black" />
                             <Text>Bài viết</Text>
                         </TouchableOpacity>
@@ -336,20 +67,79 @@ export default class HomePage extends Component {
                     <View style={{
                         flex: 1,
                     }}>
-                        <TouchableOpacity
-                            style={{
-                                flexDirection: "column",
-                                justifyContent: 'center',
-                                alignItems: 'center'
-                            }}>
+                        <TouchableOpacity style={styles.buttonTool}>
                             <Icon2 name="settings" size={35} color="black" />
                             <Text>Cài đặt</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
-
             </View >
-
         )
     }
 }
+const styles = StyleSheet.create({
+    buttonBar: {
+        flexDirection: 'row',
+        flex: 0.097323,
+        justifyContent: 'flex-end',
+        alignItems: 'center'
+
+    },
+    groupSearch: {
+        flexDirection: 'row',
+        flex: 0.902677,
+        alignItems: 'center'
+        , borderWidth: 0.5,
+        borderRadius: 30,
+        marginVertical: screenDimension.getWidth() / 58.714,
+        borderColor: '#000',
+        marginHorizontal: screenDimension.getWidth() / 52.2,
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        elevation: 7
+    },
+    textSearch: {
+        fontSize: 20,
+        width: screenDimension.getWidth() / 1.4159,
+        paddingVertical: 0
+    },
+    imagecatygory: {
+        flex: 0.3641,
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    groupTitle: {
+        flex: 0.0613,
+        flexDirection: 'column',
+        justifyContent: 'center'
+    },
+    groupTitle2: {
+        flex: 0.09195,
+        flexDirection: 'column',
+        justifyContent: 'center'
+
+    },
+    groupTool: {
+        flex: 0.0724,
+        flexDirection: 'row',
+        borderWidth: 0.5,
+        justifyContent: 'space-around'
+    },
+    buttonTool: {
+        flexDirection: "column",
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    textTitle: {
+        fontSize: 25,
+        fontWeight: 'bold'
+        , fontFamily: 'Roboto',
+        marginLeft: screenDimension.getWidth() / 31.615
+    },
+    groupItem: {
+        flex: 0.795,
+        flexDirection: 'column',
+    },
+
+
+});

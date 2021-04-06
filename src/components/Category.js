@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { FlatList, Text, View } from 'react-native'
+import ItemCategory from './ItemCategory'
 
 export default class Category extends Component {
     render() {
+
         return (
-            <View>
-                <Text> textInComponent </Text>
-            </View>
+            <FlatList
+                data={this.props.categorys}
+                renderItem={({ item }) => <ItemCategory category={item} />}
+                keyExtractor={(item) => item.id.toString()}
+            />
         )
     }
 }

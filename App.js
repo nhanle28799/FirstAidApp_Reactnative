@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { SafeAreaView, Settings, Text, View } from 'react-native'
+import Category from './src/components/Category'
+import ItemCategory from './src/components/ItemCategory'
 import ChangePassword from './src/screens/ChangePassword'
 import Feedback from './src/screens/Feedback'
 import FirstWelcom from './src/screens/FirstWelcom'
@@ -17,7 +19,7 @@ export default class App extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        <HomePage />
+        <PostsFirstAid />
       </SafeAreaView>
     )
   }

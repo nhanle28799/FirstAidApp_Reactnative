@@ -46,18 +46,13 @@ export default class Register extends Component {
                     marginLeft: screenDimension.getWidth() / 82.3,
                     marginTop: screenDimension.getWidth() / 82.3
                     , marginRight: screenDimension.getWidth() / 1.22
-
-
                 }}>
-
                     <Lock name="arrow-back" size={45} color="black" />
                 </TouchableOpacity>
-
                 <View style={{
                     flex: 3.2,
                     alignItems: 'center',
                     justifyContent: 'flex-end'
-
                 }}>
                     <View>{this.sizeLogo(this.state.risizeLogo)}</View>
                     <Text style={{
@@ -68,13 +63,10 @@ export default class Register extends Component {
 
                     }}>Register</Text>
                 </View>
-
                 <View style={{
                     flex: 6.7
                     , marginTop: screenDimension.getHeight() * 0.01,
                     justifyContent: 'space-between'
-
-
                 }}>
                     <View
                         style={{
@@ -83,16 +75,11 @@ export default class Register extends Component {
                             borderBottomColor: '#11cccc',
                             marginHorizontal: screenDimension.getWidth() / 7.98,
                             alignItems: 'center'
-                            
-
                         }}>
                         <View style={{
                             flexDirection: 'row',
                             alignItems: 'center',
-
-
                         }}>
-
                             <Icon name="email" size={25} color="#11CCCC" />
                             <TextInput placeholder="Your Email"
                                 onKeyPress={() => {
@@ -101,12 +88,9 @@ export default class Register extends Component {
                                         this.setState({ risizeLogo: this.state.risizeLogo = true })
                                     })
                                 }}
-
-
                                 style={{
                                     width: screenDimension.getHeight() * 0.30,
                                     fontSize: 15,
-
                                 }} />
                         </View>
                     </View>
@@ -117,23 +101,16 @@ export default class Register extends Component {
                             borderBottomColor: '#11cccc',
                             marginHorizontal: screenDimension.getWidth() / 7.98,
                             alignItems: 'center'
-
-
                         }}>
                         <View style={{
                             flexDirection: 'row',
                             alignItems: 'center',
-
-
                         }}>
-
                             <Icon name="phone" size={25} color="#11CCCC" />
                             <TextInput placeholder="Your Phone"
-
                                 style={{
                                     width: screenDimension.getHeight() * 0.30,
                                     fontSize: 15,
-
                                 }} />
                         </View>
                     </View>
@@ -145,15 +122,11 @@ export default class Register extends Component {
                             marginHorizontal: screenDimension.getWidth() / 7.98,
                             alignItems: 'center'
                             , justifyContent: 'space-between'
-
                         }}>
                         <View style={{
                             flexDirection: 'row',
                             alignItems: 'center',
-
-
                         }}>
-
                             <Lock name="md-lock-closed-sharp" size={25} color="#11CCCC" />
                             <TextInput placeholder="Your Password" style={{
                                 width: screenDimension.getHeight() * 0.30,
@@ -163,7 +136,6 @@ export default class Register extends Component {
                                 <Lock name="eye-outline" size={25} color="#DCC2C2" />
                             </TouchableOpacity>
                         </View>
-
                     </View>
                     <View
                         style={{
@@ -173,12 +145,10 @@ export default class Register extends Component {
                             marginHorizontal: screenDimension.getWidth() / 7.98,
                             alignItems: 'center'
                             , justifyContent: 'space-between'
-
                         }}>
                         <View style={{
                             flexDirection: 'row',
                             alignItems: 'center',
-
                         }}>
                             <Lock name="md-lock-closed-sharp" size={25} color="#11CCCC" />
                             <TextInput placeholder="Confirm Password" style={{
@@ -189,10 +159,7 @@ export default class Register extends Component {
                                 <Lock name="eye-outline" size={25} color="#DCC2C2" />
                             </TouchableOpacity>
                         </View>
-
                     </View>
-
-
                     <View style={{
                         flex: 3.3,
                         marginTop: screenDimension.getHeight() / 33.28
@@ -215,10 +182,7 @@ export default class Register extends Component {
                                 color: 'white',
 
                             }}>Register</Text>
-
                         </TouchableOpacity>
-
-
                     </View>
                 </View>
             </View>
